@@ -1,0 +1,10 @@
+{% extends "Revengers/base.html" %}
+
+{% block content %}
+	{% for row in data %}
+		<h1>The Name is {{row.Name}}</h1>
+		<p>Born in {{row.Place}}</p>
+		<p>Best Friend is  {{row.Friend}}</p>
+		<p>Also Known as {{row.Alias}}</p>
+	{% endfor %}
+{% endblock content %}
