@@ -1,36 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import suitup
 
 
 
-temp_list  = [
-
-	{
-		'Name' : 'Bucky Barnes',
-		'Place' : 'Brooklyn',
-		'Friend' : 'Steve Rogers',
-		'Alias' : 'Winter Soldier'
-	},
-
-	{
-		'Name' : 'Steve Rogers',
-		'Place' : 'Brooklyn',
-		'Friend' : 'Bucky Barnes',
-		'Alias' : 'Captain America'
-	}
-
-]
-
-thor = [
-
-	{
-		'Planet' : 'Asgard',
-		'Realm' : 'Jonatheium',
-		'King' : 'Bhor',
-		'Queen' : 'Hela'
-	}
-
-]
 
 def team(request):
 	return HttpResponse(render(request,'Revengers/ragnorok.html'))
@@ -38,7 +11,7 @@ def team(request):
 def squad(request):
 	
 	destroyer = {
-		'loki' : thor
+		'loki' : suitup.objects.all()
 	}
 
 	return HttpResponse(render(request,'Revengers/asgard.html',destroyer))
@@ -47,7 +20,7 @@ def squad(request):
 def widow(request):
 	content = {
 
-			'data' : temp_list
+			'data' : suitup.objects.all()
 	}
 
 			
