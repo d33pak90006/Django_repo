@@ -1,10 +1,13 @@
-{% extends "Revengers/base.html" %}
+from django.db import models
+from django.contrib.auth.models import User
 
-{% block content %}
-	{% for row in loki %}
-		<h1> Name is {{row.Name}}</h1>
-		<p>Place is {{row.Place}}</p>
-		<p>Friend is  {{row.friend}}</p>
-		<p>Alias as {{row.alias}}</p>
-	{% endfor %}
-{% endblock content %}
+class suitup(models.Model):
+	Name = models.CharField(max_length = 100)
+	Place = models.TextField()
+	friend = models.TextField()
+	alias = models.TextField()
+	post_user = models.ForeignKey(User,on_delete=models.CASCADE)
+
+
+def __str__(self):
+	self.Name = Name
