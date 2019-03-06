@@ -1,0 +1,10 @@
+{% extends "Revengers/base.html" %}
+
+{% block content %}
+	{% for row in loki %}
+		<h1> Name is {{row.Name}}</h1>
+		<p>Place is {{row.Place}}</p>
+		<p>Friend is  {{row.friend}}</p>
+		<p>Alias as {{row.alias}}</p>
+	{% endfor %}
+{% endblock content %}
